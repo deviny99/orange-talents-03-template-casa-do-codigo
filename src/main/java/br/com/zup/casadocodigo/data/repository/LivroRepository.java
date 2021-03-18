@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface LivroRepository extends CrudRepository<Livro, Long> {
 
     Page<Livro> findAll(Pageable pageable);
-
     Page<Livro> findByTituloLike(String titulo,Pageable pageable);
 
 }
