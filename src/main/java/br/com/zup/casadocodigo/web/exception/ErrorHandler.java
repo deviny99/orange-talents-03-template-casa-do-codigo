@@ -43,4 +43,13 @@ public class ErrorHandler {
                 "campos", campos));
     }
 
+
+    @ExceptionHandler(CustomErrorValidator.class)
+    public ResponseEntity<?> handleMethodArgumentNotValidException(CustomErrorValidator exception) {
+
+        return badRequest().body(Map.of(
+                "mensagem", exception.getLocalizedMessage(),
+                "campos", exception.getCampos()));
+    }
+
 }

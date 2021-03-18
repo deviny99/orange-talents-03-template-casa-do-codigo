@@ -1,9 +1,12 @@
 package br.com.zup.casadocodigo.web.controller.dto.request;
 
+import br.com.zup.casadocodigo.data.domain.Autor;
+import br.com.zup.casadocodigo.web.controller.dto.validation.generic.UniqueConstraints;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@UniqueConstraints(entityClass = Autor.class,fieldsEntitiy = {"email"})
 public class AutorFormRequest {
 
     private Long id = 0L;

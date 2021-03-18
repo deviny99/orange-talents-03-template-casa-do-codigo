@@ -1,7 +1,10 @@
 package br.com.zup.casadocodigo.web.controller.dto.request;
 
+import br.com.zup.casadocodigo.data.domain.Categoria;
+import br.com.zup.casadocodigo.web.controller.dto.validation.generic.UniqueConstraints;
 import javax.validation.constraints.NotBlank;
 
+@UniqueConstraints(entityClass = Categoria.class, fieldsEntitiy = {"nome"})
 public class CategoriaFormRequest {
 
     private Long id = 0L;
