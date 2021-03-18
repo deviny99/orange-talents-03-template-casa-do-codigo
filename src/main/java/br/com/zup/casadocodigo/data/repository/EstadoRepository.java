@@ -12,5 +12,7 @@ public interface EstadoRepository extends CrudRepository<Estado,Integer> {
     @Query("SELECT e FROM Estado e JOIN e.pais p WHERE e.nome = ?1 and p.id = ?2")
     public Optional<Estado> findByNomeAndPais(String estado,Short pais);
 
+    @Query("SELECT e FROM Estado e WHERE e.pais.id = ?1")
+    public Optional<Estado> findByPaisId(Short idPais);
 
 }
