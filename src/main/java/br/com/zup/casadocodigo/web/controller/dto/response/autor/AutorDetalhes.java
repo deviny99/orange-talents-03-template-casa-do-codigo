@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.web.controller.dto.response;
+package br.com.zup.casadocodigo.web.controller.dto.response.autor;
 
 import br.com.zup.casadocodigo.data.domain.Autor;
 

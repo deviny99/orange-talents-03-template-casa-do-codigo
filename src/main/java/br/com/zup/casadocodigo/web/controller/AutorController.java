@@ -3,7 +3,7 @@ package br.com.zup.casadocodigo.web.controller;
 import br.com.zup.casadocodigo.data.domain.Autor;
 import br.com.zup.casadocodigo.data.repository.AutorRepository;
 import br.com.zup.casadocodigo.web.controller.dto.request.AutorFormRequest;
-import br.com.zup.casadocodigo.web.controller.dto.response.AutorDto;
+import br.com.zup.casadocodigo.web.controller.dto.response.autor.AutorDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

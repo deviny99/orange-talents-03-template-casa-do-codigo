@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.web.controller.dto.response;
+package br.com.zup.casadocodigo.web.controller.dto.response.categoria;
 
 import br.com.zup.casadocodigo.data.domain.Categoria;
 

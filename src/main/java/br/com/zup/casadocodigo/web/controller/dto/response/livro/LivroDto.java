@@ -1,11 +1,14 @@
-package br.com.zup.casadocodigo.web.controller.dto.response;
+package br.com.zup.casadocodigo.web.controller.dto.response.livro;
 
 import br.com.zup.casadocodigo.data.domain.Livro;
+import br.com.zup.casadocodigo.web.controller.dto.response.autor.AutorDto;
+import br.com.zup.casadocodigo.web.controller.dto.response.categoria.CategoriaDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class LivroDetalhes {
+
+public class LivroDto {
 
     private Long id;
     private String titulo;
@@ -16,13 +19,13 @@ public class LivroDetalhes {
     private Long isbn;
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dtPub;
-    private AutorDetalhes autor;
+    private AutorDto autor;
     private CategoriaDto categoria;
 
     @Deprecated
-    public LivroDetalhes(){ }
+    public LivroDto(){ }
 
-    public LivroDetalhes(Livro livro) {
+    public LivroDto(Livro livro) {
 
         this.id = livro.getId();
         this.titulo = livro.getTitulo();
@@ -32,7 +35,7 @@ public class LivroDetalhes {
         this.paginas = livro.getPaginas();
         this.isbn = livro.getIsbn();
         this.dtPub = livro.getDtPub();
-        this.autor = new AutorDetalhes(livro.getAutor());
+        this.autor = new AutorDto(livro.getAutor());
         this.categoria = new CategoriaDto(livro.getCategoria());
     }
 
@@ -68,7 +71,7 @@ public class LivroDetalhes {
         return dtPub;
     }
 
-    public AutorDetalhes getAutor() {
+    public AutorDto getAutor() {
         return autor;
     }
 
