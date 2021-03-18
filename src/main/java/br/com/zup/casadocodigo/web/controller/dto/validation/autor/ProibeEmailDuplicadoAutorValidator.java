@@ -1,4 +1,4 @@
-package br.com.zup.casadocodigo.web.controller.dto.validation;
+package br.com.zup.casadocodigo.web.controller.dto.validation.autor;
 
 import br.com.zup.casadocodigo.data.domain.Autor;
 import br.com.zup.casadocodigo.data.repository.AutorRepository;
