@@ -22,7 +22,7 @@ public class UniqueCustom implements ConstraintValidator<UniqueConstraints,Objec
     private String [] fieldsEntitiy;
     private Class<?> entityClass;
     private String idEntityFieldName;
-    private String idValueText;
+    private String idValueText = "0";
     private Type typeID;
 
     @Override
