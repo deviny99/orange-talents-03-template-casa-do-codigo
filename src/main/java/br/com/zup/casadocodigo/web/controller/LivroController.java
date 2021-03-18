@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.Optional;
+import static br.com.zup.casadocodigo.web.exception.ExceptionController.notFound;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
@@ -56,6 +58,15 @@ public class LivroController {
             livros =  LivroResponseList.convertList(this.livroRepository.findByTituloLike(titulo,pageable));
         }
         return ok(livros);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> detalhesLivro(@PathVariable("id") Long id){
+        Optional<Livro> livroEntityOptional = this.livroRepository.findById(id);
+        if (!livroEntityOptional.isPresent()){
+            throw notFound("Não existe cadastro de Livro com o Id informado.");
+        }
+        return ok(new LivroDetalhes(livroEntityOptional.get()));
     }
 
 }
