@@ -23,6 +23,11 @@ public class Autor {
     private LocalDateTime momentoRegistro = LocalDateTime.now();
 
 
+    @Deprecated
+    public Autor(){
+
+    }
+
     public Autor(Long id, @NotNull @NotBlank String nome,@NotNull @NotBlank String email,@NotNull @NotBlank String descricao){
         this.id = id;
         this.nome = nome;
