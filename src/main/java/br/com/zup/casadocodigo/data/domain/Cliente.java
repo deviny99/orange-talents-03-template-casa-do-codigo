@@ -27,10 +27,10 @@ public class Cliente implements Serializable {
     private String endereco;
     @Column(name = "complemento", nullable = false)
     private String complemento;
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pais", nullable = false)
     private Pais pais;
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "estado")
     private Estado estado;
     @Column(name = "cep", nullable = false)
